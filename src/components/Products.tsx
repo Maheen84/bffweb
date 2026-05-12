@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Laptop, Bike, Award, Zap } from "lucide-react";
 
 const brands = [
-  "Liv", "Giant", "Momentum", "Surly", "All-City", "Salsa", "Public"
+  "All", "LIV", "Giant", "Momentum", "All-City"
 ];
 
 const highlights = [
@@ -10,27 +11,29 @@ const highlights = [
     title: "Commuter & City",
     category: "Practical",
     price: "From $599",
-    image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=800&h=800"
+    image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Road & Performance",
     category: "Speed",
     price: "From $1,299",
-    image: "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=800&h=800"
+    image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=800&auto=format&fit=crop"
   },
   {
     title: "Gravel & Adventure",
     category: "Freedom",
     price: "From $999",
-    image: "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&q=80&w=800&h=800"
+    image: "https://images.unsplash.com/photo-1501147830916-ce44a6359892?q=80&w=800&auto=format&fit=crop"
   }
 ];
 
 export default function Products() {
+  const [activeBrand, setActiveBrand] = useState("All");
+
   return (
-    <section id="products" className="py-24 px-6 bg-white">
+    <section id="products" className="py-24 px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <span className="text-teal-600 font-bold uppercase tracking-widest text-sm mb-4 block">Curated Selection</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Bikes for Every Journey</h2>
@@ -38,12 +41,22 @@ export default function Products() {
               We carry a carefully selected range of brands that share our commitment to quality, durability, and style.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-start lg:justify-end">
-            {brands.map((brand) => (
-              <span key={brand} className="px-6 py-2 bg-slate-50 border border-slate-100 rounded-full font-bold text-slate-400 hover:text-teal-600 transition-colors cursor-default">
-                {brand}
-              </span>
-            ))}
+          <div className="w-full lg:w-auto">
+            <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible pb-4 md:pb-0 gap-3 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 md:justify-end">
+              {brands.map((brand) => (
+                <button
+                  key={brand}
+                  onClick={() => setActiveBrand(brand)}
+                  className={`px-8 py-2.5 rounded-full border-2 font-bold text-sm transition-all duration-300 whitespace-nowrap cursor-pointer flex-shrink-0 flex items-center justify-center ${
+                    activeBrand === brand
+                      ? "bg-teal-600 border-teal-600 text-white shadow-md scale-105"
+                      : "bg-teal-50/50 border-teal-100 text-teal-900 hover:bg-teal-100/80 hover:border-teal-200"
+                  }`}
+                >
+                  {brand}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -62,7 +75,6 @@ export default function Products() {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent" />

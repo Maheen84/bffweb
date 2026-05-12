@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Heart, Wrench, Calendar, ShieldCheck } from "lucide-react";
 
 export default function About() {
   return (
@@ -7,16 +8,15 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative z-10 rounded-3xl overflow-hidden shadow-2xl"
+              className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-slate-100"
             >
               <img
-                src="https://images.unsplash.com/photo-1541625602330-2277a1cd13a1?auto=format&fit=crop&q=80&w=1200&h=900"
-                alt="BFF Bikes Community"
+                src="https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&q=80&w=1200"
+                alt="BFF Bikes Interior Shop"
                 className="w-full h-auto aspect-[4/3] object-cover"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
             <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-teal-50 rounded-full -z-0 blur-3xl opacity-60" />
@@ -40,16 +40,23 @@ export default function About() {
               <p>
                 Led by <span className="text-slate-900 font-semibold">Gillian Forsyth</span>, our team is passionate about the transformative power of cycling. We don't just sell bikes; we build relationships. From your first commuter bike to your dream road machine, we ensure every rider feels confident and supported.
               </p>
-              <div className="pt-4 flex flex-wrap gap-4">
+              <div className="pt-8 grid grid-cols-2 gap-4">
                 {[
-                  "Inclusivity First",
-                  "Expert Service",
-                  "Community Events",
-                  "Bike Advocacy"
-                ].map((tag) => (
-                  <span key={tag} className="px-4 py-2 bg-slate-50 rounded-lg text-slate-700 text-sm font-semibold border border-slate-100">
-                    {tag}
-                  </span>
+                  { name: "Inclusivity First", icon: Heart },
+                  { name: "Expert Service", icon: Wrench },
+                  { name: "Community Events", icon: Calendar },
+                  { name: "Bike Advocacy", icon: ShieldCheck }
+                ].map((item) => (
+                  <a
+                    key={item.name}
+                    href="#contact"
+                    className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-teal-500/50 hover:bg-teal-50/30 transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors flex-shrink-0">
+                      <item.icon size={20} />
+                    </div>
+                    <span className="text-slate-900 font-bold text-sm tracking-tight">{item.name}</span>
+                  </a>
                 ))}
               </div>
             </div>
