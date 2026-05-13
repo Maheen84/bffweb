@@ -3,10 +3,16 @@ import { Bike, Instagram, Facebook, Twitter, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <>
-      {/* Pre-Footer Banner */}
-      <div className="w-full bg-slate-50 border-t border-slate-100 py-3 px-6 text-center">
-        <p className="text-xs md:text-sm text-slate-400 font-medium tracking-wide">
-          Designed & Developed by <span className="text-slate-600">BizTech Resource Analyst</span>
+      <div style={{ width: '100%', textAlign: 'center', padding: '16px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
+        <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>
+          Designed & Developed by{" "}
+          <a 
+            href="https://www.biztechra.site/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ fontWeight: 700, color: '#1e293b', textDecoration: 'underline', cursor: 'pointer', border: 'none', outline: 'none' }}>
+            BizTech Resource Analyst
+          </a>
         </p>
       </div>
 
@@ -50,12 +56,12 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-bold mb-6">Shop Hours</h4>
-            <ul className="space-y-4 text-slate-400">
+            <ul className="space-y-4 text-slate-400 text-[1.1rem] font-semibold tracking-[0.3px]">
               <li className="flex justify-between">
                 <span>Mon - Fri</span>
                 <span>11am - 7pm</span>
               </li>
-              <li className="flex justify-between text-teal-400 font-medium">
+              <li className="flex justify-between">
                 <span>Saturday</span>
                 <span>10am - 5pm</span>
               </li>
@@ -84,13 +90,10 @@ export default function Footer() {
 
         <div className="pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} BFF Bikes, LLC. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-          <div className="text-right">
-            <p className="text-xs opacity-50 mb-1">Designed for Chicago</p>
-            <p className="text-[10px] opacity-40 uppercase tracking-widest font-bold">Powered by BizTech™</p>
+          <div className="flex gap-4 text-xs">
+            <a href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <span>|</span>
+            <a href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</a>
           </div>
         </div>
       </div>
