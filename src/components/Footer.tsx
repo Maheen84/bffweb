@@ -3,14 +3,12 @@ import { Bike, Instagram, Facebook, Twitter, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <>
-      <div style={{ width: '100%', textAlign: 'center', padding: '16px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', backgroundColor: '#f8fafc' }}>
-        <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>
+      <div style={{ width: '100%', textAlign: 'center', padding: '20px', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0', backgroundColor: '#f1f5f9' }}>
+        <p style={{ fontSize: '1rem', fontWeight: 500, color: '#1e293b' }}>
           Designed & Developed by{" "}
-          <a 
-            href="https://www.biztechra.site/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ fontWeight: 700, color: '#1e293b', textDecoration: 'underline', cursor: 'pointer', border: 'none', outline: 'none' }}>
+          <a
+            href="mailto:biztechresourceanalyst@gmail.com"
+            style={{ fontWeight: 700, textDecoration: 'underline', cursor: 'pointer', border: 'none', outline: 'none' }}>
             BizTech Resource Analyst
           </a>
         </p>
