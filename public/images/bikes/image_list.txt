@@ -1,0 +1,12 @@
+/public/images/bikes/liv_avail_advanced.jpg
+/public/images/bikes/liv_devote_advanced.jpg
+/public/images/bikes/liv_alight_disc.jpg
+/public/images/bikes/giant_tcr_road.jpg
+/public/images/bikes/giant_revolt_advanced.jpg
+/public/images/bikes/giant_escape_disc.jpg
+/public/images/bikes/momentum_vida.jpg
+/public/images/bikes/momentum_transend_electric.jpg
+/public/images/bikes/momentum_street.jpg
+/public/images/bikes/allcity_space_horse.jpg
+/public/images/bikes/allcity_super_professional.jpg
+/public/images/bikes/allcity_zig_zag.jpg

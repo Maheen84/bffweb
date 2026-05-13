@@ -47,16 +47,15 @@ export default function About() {
                   { name: "Community Events", icon: Calendar },
                   { name: "Bike Advocacy", icon: ShieldCheck }
                 ].map((item) => (
-                  <a
+                  <div
                     key={item.name}
-                    href="#contact"
                     className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-teal-500/50 hover:bg-teal-50/30 transition-all group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 group-hover:bg-teal-600 group-hover:text-white transition-colors flex-shrink-0">
                       <item.icon size={20} />
                     </div>
                     <span className="text-slate-900 font-bold text-sm tracking-tight">{item.name}</span>
-                  </a>
+                  </div>
                 ))}
               </div>
             </div>
